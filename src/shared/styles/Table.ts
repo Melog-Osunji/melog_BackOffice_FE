@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const TableSection = styled.div`
   border-radius: ${({ theme }) => theme.radius.md};
-  overflow: hidden;
 `;
 
 export const TableHeader = styled.div`
@@ -37,7 +36,6 @@ export const TableCol = styled.div<{ width?: string }>`
   font-weight: 400;
   line-height: 28px;
   color: ${({ theme }) => theme.colors.gray_400};
-  overflow: hidden;
   text-overflow: ellipsis;
 `;
 
