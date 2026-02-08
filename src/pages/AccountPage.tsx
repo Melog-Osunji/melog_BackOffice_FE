@@ -17,6 +17,9 @@ import deleteIcon from "../assets/icons/Delete.svg";
 
 const ITEMS_PER_PAGE = 7;
 
+const COLUMNS = "50px 150px 1fr";
+
+
 export default function AccountPage() {
   const {
     selectedAccounts,
@@ -115,22 +118,22 @@ export default function AccountPage() {
       </FilterSection>
 
       <TableSection>
-        <TableHeader>
-           <TableCol width="50px">
+        <TableHeader columns={COLUMNS}>
+           <TableCol>
             <StyledCheckbox
               src={isAllSelected ? checkBoxActive : checkBox}
               alt="select all"
               onClick={() => toggleSelectAll(paginatedAccountIds)}
             />
           </TableCol>
-          <TableCol width="150px">이름</TableCol>
-          <TableCol width="250px">이메일</TableCol>
+          <TableCol>이름</TableCol>
+          <TableCol>이메일</TableCol>
         </TableHeader>
 
         <TableBody>
           {paginatedAccounts.map((account) => (
-            <TableRow key={account.id}>
-              <TableCol width="50px">
+            <TableRow key={account.id} columns={COLUMNS}>
+              <TableCol>
                 <StyledCheckbox
                   src={
                     selectedAccounts.includes(account.id)
@@ -141,8 +144,8 @@ export default function AccountPage() {
                   onClick={() => toggleSelectAccount(account.id)}
                 />
               </TableCol>
-              <TableCol width="150px">{account.name}</TableCol>
-              <TableCol width="250px">{account.email}</TableCol>
+              <TableCol >{account.name}</TableCol>
+              <TableCol >{account.email}</TableCol>
             </TableRow>
           ))}
         </TableBody>
