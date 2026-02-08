@@ -5,6 +5,7 @@ import AccountPage from "../pages/AccountPage";
 import HarmonyRoomPage from "../pages/HarmonyRoomPage";
 import KeywordPage from "../pages/KeywordPage";
 import QnA from "../pages/QnAPage";
+import HarmonyRoomDetailPage from "../pages/HarmonyRoomDetailPage";
 
 
 export const router = createBrowserRouter([
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
       { index: true, element: <AccountPage /> },
       { path: "keywords", element: <KeywordPage /> },
       { path: "harmonyrooms", element: <HarmonyRoomPage /> },
+      { path: "harmonyrooms/:roomId", element: <HarmonyRoomDetailPage /> },
       { path: "calender", element: <HarmonyRoomPage /> },
       { path: "QnA", element: <QnA /> },
       { path: "notice", element: <HarmonyRoomPage /> },
