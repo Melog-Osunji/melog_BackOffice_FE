@@ -136,7 +136,7 @@ export interface Keyword {
   id: number;
   name: string;
   category: string;
-  kewords: string[];
+  keywords: string[];
 }
 
 export const MOCK_KEYWORDS: Keyword[] = [
@@ -144,91 +144,91 @@ export const MOCK_KEYWORDS: Keyword[] = [
     id: 1,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 2,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 3,
     name: "아무개",
     category: "연주자",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 4,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 5,
     name: "콘트라베이스",
     category: "악기",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 6,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 7,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 8,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 9,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 10,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 11,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 12,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 13,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 14,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
   {
     id: 15,
     name: "바흐",
     category: "작곡가",
-    kewords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
+    keywords: ["온보딩", "연관검색어", "게시물", "하모니룸"]
   },
 ]
 

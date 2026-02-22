@@ -16,7 +16,7 @@ type Props = {
   className?: string;
   chevronUpIcon: string;
   chevronDownIcon: string;
-  checkIcon: string;
+  checkIcon?: string;
 };
 
 export default function SearchSelect({

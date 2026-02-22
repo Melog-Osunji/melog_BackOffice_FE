@@ -17,6 +17,9 @@ import upTriangle from "../assets/icons/UpTriangle.svg";
 
 const ITEMS_PER_PAGE = 7;
 
+const COLUMNS = "50px 100px 180px 140px 1fr 120px 100px";
+
+
 export default function QnAPage() {
   const [qnas, setQnas] = useState<QnA[]>([]);
   const [selectedQnas, setSelectedQnas] = useState<number[]>([]);
@@ -128,17 +131,17 @@ export default function QnAPage() {
       </FilterSection>
 
       <TableSection>
-        <TableHeader>
-          <TableCol width="50px">
+        <TableHeader columns={COLUMNS}>
+          <TableCol>
             <StyledCheckbox
               src={isAllSelected ? checkBoxActive : checkBox}
               alt="select all"
               onClick={() => toggleSelectAll(paginatedQnaIds)}
             />
           </TableCol>
-          <TableCol width="100px">이름</TableCol>
-          <TableCol width="180px">이메일</TableCol>
-          <TableCol width="160px">
+          <TableCol>이름</TableCol>
+          <TableCol>이메일</TableCol>
+          <TableCol>
             <TableFilter
               options={[
                 { label: "서비스 문의", value: "서비스 문의" },
@@ -152,15 +155,15 @@ export default function QnAPage() {
               checkIcon={check}
             />
           </TableCol>
-          <TableCol width="350px">내용</TableCol>
-          <TableCol width="150px">날짜</TableCol>
-          <TableCol width="100px">상태</TableCol>
+          <TableCol>내용</TableCol>
+          <TableCol>날짜</TableCol>
+          <TableCol>상태</TableCol>
         </TableHeader>
 
         <TableBody>
           {paginatedQnas.map((qna) => (
-            <TableRow key={qna.id}>
-              <TableCol width="50px">
+            <TableRow key={qna.id} columns={COLUMNS}>
+              <TableCol >
                 <StyledCheckbox
                   src={
                     selectedQnas.includes(qna.id) ? checkBoxActive : checkBox
@@ -169,12 +172,12 @@ export default function QnAPage() {
                   onClick={() => toggleSelectQna(qna.id)}
                 />
               </TableCol>
-              <TableCol width="100px">{qna.name}</TableCol>
-              <TableCol width="180px">{qna.email}</TableCol>
-              <TableCol width="160px">{qna.category}</TableCol>
-              <TableCol width="350px">{qna.content}</TableCol>
-              <TableCol width="150px">{qna.date}</TableCol>
-              <TableCol width="100px">
+              <TableCol>{qna.name}</TableCol>
+              <TableCol>{qna.email}</TableCol>
+              <TableCol>{qna.category}</TableCol>
+              <TableCol ellipsis={true}>{qna.content}</TableCol>
+              <TableCol>{qna.date}</TableCol>
+              <TableCol>
                 <CommonButton label={qna.status} size="sm" variant={qna.status === "답변완료" ? "ghost" : "default"}/>
               </TableCol>
             </TableRow>
