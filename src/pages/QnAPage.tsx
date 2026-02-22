@@ -17,7 +17,7 @@ import upTriangle from "../assets/icons/UpTriangle.svg";
 
 const ITEMS_PER_PAGE = 7;
 
-const COLUMNS = "50px 100px 180px 160px 1fr 150px 100px";
+const COLUMNS = "50px 100px 180px 140px 1fr 120px 100px";
 
 
 export default function QnAPage() {
@@ -175,7 +175,7 @@ export default function QnAPage() {
               <TableCol>{qna.name}</TableCol>
               <TableCol>{qna.email}</TableCol>
               <TableCol>{qna.category}</TableCol>
-              <TableCol>{qna.content}</TableCol>
+              <TableCol ellipsis={true}>{qna.content}</TableCol>
               <TableCol>{qna.date}</TableCol>
               <TableCol>
                 <CommonButton label={qna.status} size="sm" variant={qna.status === "답변완료" ? "ghost" : "default"}/>

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 type Variant = "default" | "ghost" | "outline" | "ghostGray";
-type Size = "sm" | "lg";
+type Size = "sm" | "lg" | "md";
 
 interface ButtonProps {
   label?: string;
@@ -38,6 +38,12 @@ const variants = {
 const sizes = {
   sm: css`
     padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 27px;
+  `,
+  md: css`
+    padding: 7px 24px;
     font-size: 15px;
     font-weight: 400;
     line-height: 27px;

@@ -108,7 +108,7 @@ export default function HarmonyRoomPage() {
               <TableCol>{r.roomName}</TableCol>
               <TableCol>
                 {r.role === "owner" && (
-                  <CommonButton label="자세히 보기" variant="ghostGray" size="sm" onClick={() => handleDetail(r.roomId)} />
+                  <CommonButton label="자세히 보기" variant="ghostGray" size="md" onClick={() => handleDetail(r.roomId)} />
                 )}
               </TableCol>
             </TableRow>
