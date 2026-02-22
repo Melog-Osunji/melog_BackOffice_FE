@@ -6,6 +6,7 @@ import HarmonyRoomPage from "../pages/HarmonyRoomPage";
 import KeywordPage from "../pages/KeywordPage";
 import QnA from "../pages/QnAPage";
 import HarmonyRoomDetailPage from "../pages/HarmonyRoomDetailPage";
+import CalendarPage from "../pages/CalendarPage";
 
 
 export const router = createBrowserRouter([
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
       { path: "keywords", element: <KeywordPage /> },
       { path: "harmonyrooms", element: <HarmonyRoomPage /> },
       { path: "harmonyrooms/:roomId", element: <HarmonyRoomDetailPage /> },
-      { path: "calender", element: <HarmonyRoomPage /> },
+      { path: "calender", element: <CalendarPage/>},
       { path: "QnA", element: <QnA /> },
       { path: "notice", element: <HarmonyRoomPage /> },
       { path: "userstatistics", element: <HarmonyRoomPage /> },
