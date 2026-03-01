@@ -7,6 +7,7 @@ import KeywordPage from "../pages/KeywordPage";
 import QnA from "../pages/QnAPage";
 import HarmonyRoomDetailPage from "../pages/HarmonyRoomDetailPage";
 import CalendarPage from "../pages/CalendarPage";
+import LeaveStatisticsPage from "../pages/leaveStatisticsPage";
 
 
 export const router = createBrowserRouter([
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
       { path: "QnA", element: <QnA /> },
       { path: "notice", element: <HarmonyRoomPage /> },
       { path: "userstatistics", element: <HarmonyRoomPage /> },
-      { path: "leavestatistics", element: <HarmonyRoomPage /> },
+      { path: "leavestatistics", element: <LeaveStatisticsPage /> },
       { path: "server", element: <HarmonyRoomPage /> },
     ],
   },
