@@ -463,3 +463,19 @@ export const MOCK_CALENDAR : Calendar[] = [
     name: "홍길동의 소나타"
   },
 ]
+
+export const MOCK_LEAVE_STATISTICS = {
+  serviceLeave: [
+    { division: "0", num: 148 },
+    { division: "1", num: 93 },
+    { division: "2", num: 74 },
+    { division: "3", num: 39 },
+    { division: "4", num: 57 },
+  ],
+  roomClose: [
+    { division: "1", num: 121 },
+    { division: "2", num: 88 },
+    { division: "3", num: 46 },
+    { division: "4", num: 63 },
+  ],
+};
