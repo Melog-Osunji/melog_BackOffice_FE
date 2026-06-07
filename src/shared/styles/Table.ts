@@ -5,7 +5,7 @@ export const TableSection = styled.div`
 `;
 
 type GridProps = {
-  columns?: string; // 예: "200px 150px 1fr 120px"
+  columns?: string; 
 };
 
 export const TableHeader = styled.div<GridProps>`
@@ -32,7 +32,7 @@ export const TableRow = styled.div<GridProps>`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const TableCol = styled.div<{ width?: string, ellipsis?: boolean }>`
+export const TableCol = styled.div<{ width?: string, ellipsis?: boolean, fontSize?: string }>`
   display: flex;
   align-items: center;
   height: 48px;
@@ -43,7 +43,7 @@ export const TableCol = styled.div<{ width?: string, ellipsis?: boolean }>`
   width: ${({ width }) => width || "100%"};
 
   font-family: "Pretendard";
-  font-size: 18px;
+  font-size: ${({ fontSize }) => fontSize || "18px"};
   font-weight: 400;
   line-height: 28px;
   color: ${({ theme }) => theme.colors.gray_400};

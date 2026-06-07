@@ -8,6 +8,8 @@ import QnA from "../pages/QnAPage";
 import HarmonyRoomDetailPage from "../pages/HarmonyRoomDetailPage";
 import CalendarPage from "../pages/CalendarPage";
 import LeaveStatisticsPage from "../pages/leaveStatisticsPage";
+import AlarmPage from "../pages/AlarmPage";
+import AlarmDetailPage from "../pages/AlarmDetailPage";
 
 
 export const router = createBrowserRouter([
@@ -23,6 +25,8 @@ export const router = createBrowserRouter([
       { path: "calender", element: <CalendarPage/>},
       { path: "QnA", element: <QnA /> },
       { path: "notice", element: <HarmonyRoomPage /> },
+      { path: "alarm", element: <AlarmPage /> },
+      { path: "alarm/:alarmId", element: <AlarmDetailPage /> },
       { path: "userstatistics", element: <HarmonyRoomPage /> },
       { path: "leavestatistics", element: <LeaveStatisticsPage /> },
       { path: "server", element: <HarmonyRoomPage /> },
