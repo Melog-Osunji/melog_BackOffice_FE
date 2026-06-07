@@ -10,6 +10,7 @@ import CalendarPage from "../pages/CalendarPage";
 import LeaveStatisticsPage from "../pages/leaveStatisticsPage";
 import AlarmPage from "../pages/AlarmPage";
 import AlarmDetailPage from "../pages/AlarmDetailPage";
+import UserStatisticsPage from "../pages/UserStatisticsPage";
 
 
 export const router = createBrowserRouter([
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
       { path: "notice", element: <HarmonyRoomPage /> },
       { path: "alarm", element: <AlarmPage /> },
       { path: "alarm/:alarmId", element: <AlarmDetailPage /> },
-      { path: "userstatistics", element: <HarmonyRoomPage /> },
+      { path: "userstatistics", element: <UserStatisticsPage /> },
       { path: "leavestatistics", element: <LeaveStatisticsPage /> },
       { path: "server", element: <HarmonyRoomPage /> },
     ],

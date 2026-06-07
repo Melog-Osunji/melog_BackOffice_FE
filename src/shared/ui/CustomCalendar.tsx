@@ -1,36 +1,82 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 import { DayPicker, useDayPicker } from "react-day-picker";
 import type { DateRange, MonthCaptionProps } from "react-day-picker";
 import { ko } from "react-day-picker/locale";
 import "react-day-picker/style.css";
 
-type Props = {
+type RangeCalendarProps = {
+  mode?: "range";
   selectedRange?: DateRange;
   onSelect: (range?: DateRange) => void;
+  selectedDate?: never;
 };
 
-export default function CustomCalendar({ selectedRange, onSelect }: Props) {
+type SingleCalendarProps = {
+  mode: "single";
+  selectedDate?: Date;
+  onSelect: (date?: Date) => void;
+  selectedRange?: never;
+};
+
+type Props = RangeCalendarProps | SingleCalendarProps;
+
+export default function CustomCalendar(props: Props) {
+  if (props.mode === "single") {
+    return <SingleCalendar {...props} />;
+  }
+
   return (
-    <DayPickerWrap>
+    <DayPickerWrap $mode="range">
       <DayPicker
         mode="range"
         locale={ko}
-        selected={selectedRange}
-        onSelect={(range) => onSelect(range)}
+        selected={props.selectedRange}
+        onSelect={props.onSelect}
         showOutsideDays
         fixedWeeks
         formatters={{
           formatCaption: (date) => `${date.getMonth() + 1}`,
         }}
         components={{
-          MonthCaption: CustomCaption, // v9 기준
+          MonthCaption: CustomCaption,
         }}
       />
     </DayPickerWrap>
   );
 }
 
-/** 커스텀 캡션 컴포넌트 */
+function SingleCalendar({ selectedDate, onSelect }: SingleCalendarProps) {
+  const [month, setMonth] = useState<Date>(selectedDate ?? new Date());
+
+  useEffect(() => {
+    if (selectedDate) {
+      setMonth(selectedDate);
+    }
+  }, [selectedDate]);
+
+  return (
+    <DayPickerWrap $mode="single">
+      <DayPicker
+        mode="single"
+        locale={ko}
+        month={month}
+        onMonthChange={setMonth}
+        selected={selectedDate}
+        onSelect={onSelect}
+        showOutsideDays
+        fixedWeeks
+        formatters={{
+          formatCaption: (date) => `${date.getMonth() + 1}`,
+        }}
+        components={{
+          MonthCaption: CustomCaption,
+        }}
+      />
+    </DayPickerWrap>
+  );
+}
+
 function CustomCaption({ calendarMonth }: MonthCaptionProps) {
   const { goToMonth, nextMonth, previousMonth } = useDayPicker();
 
@@ -57,10 +103,7 @@ function CustomCaption({ calendarMonth }: MonthCaptionProps) {
   );
 }
 
-/* ===================== Styles ===================== */
-
-const DayPickerWrap = styled.div`
-  /* ── CSS 변수 재정의 ── */
+const DayPickerWrap = styled.div<{ $mode: "range" | "single" }>`
   .rdp-root {
     --rdp-accent-color: ${({ theme }) => theme.colors.blue_normal};
     --rdp-accent-background-color: ${({ theme }) => theme.colors.blue_light};
@@ -77,12 +120,10 @@ const DayPickerWrap = styled.div`
     margin: 0;
   }
 
-  /* ── 월 레이아웃 ── */
   .rdp-months {
     justify-content: center;
   }
 
-  /* ── 헤더 캡션 (월 표시 영역) ── */
   .rdp-month_caption {
     padding: 0;
   }
@@ -93,12 +134,10 @@ const DayPickerWrap = styled.div`
     color: ${({ theme }) => theme.colors.black};
   }
 
-  /* 기본 네비게이션 숨김(우리는 CustomCaption에서 구현) */
   .rdp-nav {
     display: none;
   }
 
-  /* ── 요일 헤더 ── */
   .rdp-weekday {
     font-size: 12px;
     font-weight: 500;
@@ -108,7 +147,6 @@ const DayPickerWrap = styled.div`
     text-align: center;
   }
 
-  /* ── 날짜 셀 ── */
   .rdp-day {
     width: var(--rdp-day-width);
     height: var(--rdp-day-height);
@@ -116,7 +154,6 @@ const DayPickerWrap = styled.div`
     text-align: center;
   }
 
-  /* ── 날짜 버튼 ── */
   .rdp-day_button {
     width: var(--rdp-day_button-width);
     height: var(--rdp-day_button-height);
@@ -134,64 +171,60 @@ const DayPickerWrap = styled.div`
     }
   }
 
-  /* ── 오늘 날짜 ── */
   .rdp-today .rdp-day_button {
     font-weight: 800;
     color: ${({ theme }) => theme.colors.blue_normal_active};
   }
 
-  /* ── 범위 중간 ── */
-  .rdp-range_middle {
-    background: ${({ theme }) => theme.colors.blue_light};
+  ${({ $mode }) =>
+    $mode === "single"
+      ? `
+    .rdp-selected .rdp-day_button {
+      background: #3D8FB3 !important;
+      color: #ffffff !important;
+      border-radius: 50% !important;
+    }
+  `
+      : `
+    .rdp-range_middle {
+      background: #D4EEF8;
 
-    .rdp-day_button {
-      border-radius: 8px;
-      color: ${({ theme }) => theme.colors.gray_500};
+      .rdp-day_button {
+        border-radius: 8px;
+        color: #636C73;
+        background: transparent;
+      }
+    }
+
+    .rdp-range_start {
+      background: linear-gradient(to right, transparent 50%, #D4EEF8 50%);
+
+      .rdp-day_button {
+        background: #3D8FB3 !important;
+        color: #ffffff !important;
+        border-radius: 50% !important;
+      }
+    }
+
+    .rdp-range_end {
+      background: linear-gradient(to left, transparent 50%, #D4EEF8 50%);
+
+      .rdp-day_button {
+        background: #3D8FB3 !important;
+        color: #ffffff !important;
+        border-radius: 50% !important;
+      }
+    }
+
+    .rdp-range_start.rdp-range_end {
       background: transparent;
     }
-  }
+  `}
 
-  /* ── 범위 시작 ── */
-  .rdp-range_start {
-    background: linear-gradient(
-      to right,
-      transparent 50%,
-      ${({ theme }) => theme.colors.blue_light} 50%
-    );
-
-    .rdp-day_button {
-      background: ${({ theme }) => theme.colors.blue_normal_active} !important;
-      color: #ffffff !important;
-      border-radius: 50% !important;
-    }
-  }
-
-  /* ── 범위 끝 ── */
-  .rdp-range_end {
-    background: linear-gradient(
-      to left,
-      transparent 50%,
-      ${({ theme }) => theme.colors.blue_light} 50%
-    );
-
-    .rdp-day_button {
-      background: ${({ theme }) => theme.colors.blue_normal_active} !important;
-      color: #ffffff !important;
-      border-radius: 50% !important;
-    }
-  }
-
-  /* ── 단일 날짜만 선택 ── */
-  .rdp-range_start.rdp-range_end {
-    background: transparent;
-  }
-
-  /* ── 월 바깥 날짜 ── */
   .rdp-outside .rdp-day_button {
     color: ${({ theme }) => theme.colors.gray_300};
   }
 
-  /* ── 비활성 날짜 ── */
   .rdp-disabled .rdp-day_button {
     cursor: not-allowed;
     color: ${({ theme }) => theme.colors.gray_300};

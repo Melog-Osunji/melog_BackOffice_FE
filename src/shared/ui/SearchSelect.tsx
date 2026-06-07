@@ -143,6 +143,7 @@ const Menu = styled.div`
 
   overflow: hidden;
   box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08);
+  z-index: 999;
 `;
 
 const Item = styled.button<{ $active: boolean }>`

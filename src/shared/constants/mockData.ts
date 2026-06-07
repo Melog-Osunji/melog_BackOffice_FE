@@ -466,6 +466,7 @@ export const MOCK_CALENDAR : Calendar[] = [
 
 // 알림 목업 데이터
 import type { Alarm } from "../stores/alarm.store";
+import { theme } from "../styles/theme";
 
 export const MOCK_ALARMS: Alarm[] = [
   {
@@ -634,4 +635,113 @@ export const MOCK_LEAVE_STATISTICS = {
     { division: "3", num: 46 },
     { division: "4", num: 63 },
   ],
+};
+
+export interface SocialLoginStatItem {
+  name: string;
+  value: number;
+  colorKey: keyof typeof theme.colors;
+}
+
+export interface UsageTimeStatItem {
+  hour: string;
+  count: number;
+}
+
+export interface WithdrawalRateStatItem {
+  label: string;
+  cumulativeLogin: number;
+  cumulativeWithdrawal: number;
+}
+
+export interface SignalBarItem {
+  label: string;
+  count: number;
+}
+
+export interface SignalStatGroup {
+  feed: SignalBarItem[];
+  harmonyRoom: SignalBarItem[];
+  calendar: SignalBarItem[];
+  share: SignalBarItem[];
+}
+
+export const MOCK_USER_STATISTICS = {
+  socialLogin: {
+    totalUsers: 48279,
+    items: [
+      { name: "구글", value: 1534, colorKey: "pie_chart_green" },
+      { name: "카카오", value: 18542, colorKey: "pie_chart_yellow" },
+      { name: "애플", value: 28203, colorKey: "pie_chart_blue" },
+    ] as SocialLoginStatItem[],
+  },
+  usageTime: [
+    { hour: "00시", count: 120 },
+    { hour: "03시", count: 80 },
+    { hour: "06시", count: 210 },
+    { hour: "09시", count: 480 },
+    { hour: "12시", count: 760 },
+    { hour: "15시", count: 920 },
+    { hour: "18시", count: 880 },
+    { hour: "21시", count: 540 },
+  ] as UsageTimeStatItem[],
+  withdrawalRate: [
+    { label: "2/1", cumulativeLogin: 180, cumulativeWithdrawal: 90 },
+    { label: "2/2", cumulativeLogin: 240, cumulativeWithdrawal: 140 },
+    { label: "2/3", cumulativeLogin: 380, cumulativeWithdrawal: 210 },
+    { label: "2/4", cumulativeLogin: 520, cumulativeWithdrawal: 280 },
+    { label: "2/5", cumulativeLogin: 920, cumulativeWithdrawal: 350 },
+    { label: "2/6", cumulativeLogin: 420, cumulativeWithdrawal: 390 },
+    { label: "2/7", cumulativeLogin: 130, cumulativeWithdrawal: 430 },
+  ] as WithdrawalRateStatItem[],
+  featureUsage: {
+    totalUsage: 48279,
+    items: [
+      { name: "홈", value: 1534, colorKey: "pie_chart_green" },
+      { name: "하모니룸", value: 28203, colorKey: "pie_chart_blue" },
+      { name: "캘린더", value: 12000, colorKey: "pie_chart_yellow" },
+      { name: "마이페이지", value: 6542, colorKey: "pie_chart_pink" },
+    ] as SocialLoginStatItem[],
+  },
+  harmonyRoomUser: {
+    totalUsers: 20495,
+    items: [
+      { name: "제작 누적수", value: 11248, colorKey: "pie_chart_green" },
+      { name: "폐쇄 누적수", value: 9247, colorKey: "pie_chart_pink" },
+    ] as SocialLoginStatItem[],
+  },
+  positiveSignal: {
+    feed: [
+      { label: "좋아요", count: 420 },
+      { label: "북마크", count: 310 },
+      { label: "댓글", count: 280 },
+    ],
+    harmonyRoom: [
+      { label: "개수", count: 380 },
+      { label: "누적가입", count: 450 },
+      { label: "북마크", count: 290 },
+    ],
+    calendar: [{ label: "북마크", count: 360 }],
+    share: [
+      { label: "피드", count: 320 },
+      { label: "마이페이지", count: 240 },
+    ],
+  } as SignalStatGroup,
+  negativeSignal: {
+    feed: [
+      { label: "좋아요", count: 180 },
+      { label: "북마크", count: 140 },
+      { label: "댓글", count: 120 },
+    ],
+    harmonyRoom: [
+      { label: "개수", count: 210 },
+      { label: "누적가입", count: 260 },
+      { label: "북마크", count: 190 },
+    ],
+    calendar: [{ label: "북마크", count: 150 }],
+    share: [
+      { label: "피드", count: 170 },
+      { label: "마이페이지", count: 130 },
+    ],
+  } as SignalStatGroup,
 };
