@@ -23,6 +23,15 @@ export const theme = {
     primary: "#66B7E6",
     primarySoft: "#EAF6FD",
     danger: "#FF6B6B",
+    
+    error_100: "#FDA19B",
+    error_200: "#F04438",
+    error_300: "#B32318",
+
+    pie_chart_blue: "#59FFF9",
+    pie_chart_green: "#99FFAA",
+    pie_chart_yellow: "#FFCE49",
+    pie_chart_pink: "#FEA8CE",
   },
   radius: {
     xs: "4px",

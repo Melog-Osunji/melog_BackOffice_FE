@@ -464,6 +464,163 @@ export const MOCK_CALENDAR : Calendar[] = [
   },
 ]
 
+// 알림 목업 데이터
+import type { Alarm } from "../stores/alarm.store";
+import { theme } from "../styles/theme";
+
+export const MOCK_ALARMS: Alarm[] = [
+  {
+    id: 1,
+    author: "홍길동",
+    category: "공지사항",
+    title: "앱 사용성을 개선했어요.",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2023-12-25 11:14:12",
+    endDate: "2024-01-03 12:00:00",
+    status: "노출",
+  },
+  {
+    id: 2,
+    author: "홍길동",
+    category: "공지사항",
+    title: "앱 사용성을 개선했어요.",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2023-12-25 11:14:12",
+    endDate: "2024-01-03 12:00:00",
+    status: "예정",
+  },
+  {
+    id: 3,
+    author: "홍길동",
+    category: "공지사항",
+    title: "앱 사용성을 개선했어요.",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2023-12-25 11:14:12",
+    endDate: "2024-01-03 12:00:00",
+    status: "완료",
+  },
+  {
+    id: 4,
+    author: "홍길동",
+    category: "이벤트",
+    title: "신규 회원 가입 이벤트 안내",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2024-01-10 09:00:00",
+    endDate: "2024-01-31 23:59:59",
+    status: "노출",
+  },
+  {
+    id: 5,
+    author: "김철수",
+    category: "알림",
+    title: "서버 점검 안내",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2024-02-01 00:00:00",
+    endDate: "2024-02-01 06:00:00",
+    status: "예정",
+  },
+  {
+    id: 6,
+    author: "홍길동",
+    category: "공지사항",
+    title: "개인정보 처리방침 변경 안내",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2023-11-01 10:00:00",
+    endDate: "2023-12-31 23:59:59",
+    status: "완료",
+  },
+  {
+    id: 7,
+    author: "이영희",
+    category: "이벤트",
+    title: "연말 감사 이벤트",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2023-12-20 00:00:00",
+    endDate: "2023-12-31 23:59:59",
+    status: "완료",
+  },
+  {
+    id: 8,
+    author: "홍길동",
+    category: "알림",
+    title: "앱 업데이트 알림",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2024-03-01 08:00:00",
+    endDate: "2024-03-07 23:59:59",
+    status: "노출",
+  },
+  {
+    id: 9,
+    author: "박민수",
+    category: "공지사항",
+    title: "커뮤니티 가이드라인 업데이트",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2024-02-15 12:00:00",
+    endDate: "2024-03-15 12:00:00",
+    status: "예정",
+  },
+  {
+    id: 10,
+    author: "홍길동",
+    category: "이벤트",
+    title: "봄맞이 할인 이벤트",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2024-03-01 00:00:00",
+    endDate: "2024-03-31 23:59:59",
+    status: "노출",
+  },
+  {
+    id: 11,
+    author: "최지우",
+    category: "알림",
+    title: "하모니룸 초대 알림",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2024-01-05 14:30:00",
+    endDate: "2024-01-12 14:30:00",
+    status: "완료",
+  },
+  {
+    id: 12,
+    author: "홍길동",
+    category: "공지사항",
+    title: "앱 사용성을 개선했어요.",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2023-12-25 11:14:12",
+    endDate: "2024-01-03 12:00:00",
+    status: "노출",
+  },
+  {
+    id: 13,
+    author: "홍길동",
+    category: "공지사항",
+    title: "앱 사용성을 개선했어요.",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2023-12-25 11:14:12",
+    endDate: "2024-01-03 12:00:00",
+    status: "예정",
+  },
+  {
+    id: 14,
+    author: "홍길동",
+    category: "공지사항",
+    title: "앱 사용성을 개선했어요.",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2023-12-25 11:14:12",
+    endDate: "2024-01-03 12:00:00",
+    status: "완료",
+  },
+  {
+    id: 15,
+    author: "홍길동",
+    category: "알림",
+    title: "새로운 기능이 추가되었어요.",
+    content: "안녕하세요. 멜로그 서비스팀입니다.",
+    startDate: "2024-04-01 09:00:00",
+    endDate: "2024-04-30 23:59:59",
+    status: "노출",
+  },
+];
+
 export const MOCK_LEAVE_STATISTICS = {
   serviceLeave: [
     { division: "0", num: 148 },
@@ -478,4 +635,113 @@ export const MOCK_LEAVE_STATISTICS = {
     { division: "3", num: 46 },
     { division: "4", num: 63 },
   ],
+};
+
+export interface SocialLoginStatItem {
+  name: string;
+  value: number;
+  colorKey: keyof typeof theme.colors;
+}
+
+export interface UsageTimeStatItem {
+  hour: string;
+  count: number;
+}
+
+export interface WithdrawalRateStatItem {
+  label: string;
+  cumulativeLogin: number;
+  cumulativeWithdrawal: number;
+}
+
+export interface SignalBarItem {
+  label: string;
+  count: number;
+}
+
+export interface SignalStatGroup {
+  feed: SignalBarItem[];
+  harmonyRoom: SignalBarItem[];
+  calendar: SignalBarItem[];
+  share: SignalBarItem[];
+}
+
+export const MOCK_USER_STATISTICS = {
+  socialLogin: {
+    totalUsers: 48279,
+    items: [
+      { name: "구글", value: 1534, colorKey: "pie_chart_green" },
+      { name: "카카오", value: 18542, colorKey: "pie_chart_yellow" },
+      { name: "애플", value: 28203, colorKey: "pie_chart_blue" },
+    ] as SocialLoginStatItem[],
+  },
+  usageTime: [
+    { hour: "00시", count: 120 },
+    { hour: "03시", count: 80 },
+    { hour: "06시", count: 210 },
+    { hour: "09시", count: 480 },
+    { hour: "12시", count: 760 },
+    { hour: "15시", count: 920 },
+    { hour: "18시", count: 880 },
+    { hour: "21시", count: 540 },
+  ] as UsageTimeStatItem[],
+  withdrawalRate: [
+    { label: "2/1", cumulativeLogin: 180, cumulativeWithdrawal: 90 },
+    { label: "2/2", cumulativeLogin: 240, cumulativeWithdrawal: 140 },
+    { label: "2/3", cumulativeLogin: 380, cumulativeWithdrawal: 210 },
+    { label: "2/4", cumulativeLogin: 520, cumulativeWithdrawal: 280 },
+    { label: "2/5", cumulativeLogin: 920, cumulativeWithdrawal: 350 },
+    { label: "2/6", cumulativeLogin: 420, cumulativeWithdrawal: 390 },
+    { label: "2/7", cumulativeLogin: 130, cumulativeWithdrawal: 430 },
+  ] as WithdrawalRateStatItem[],
+  featureUsage: {
+    totalUsage: 48279,
+    items: [
+      { name: "홈", value: 1534, colorKey: "pie_chart_green" },
+      { name: "하모니룸", value: 28203, colorKey: "pie_chart_blue" },
+      { name: "캘린더", value: 12000, colorKey: "pie_chart_yellow" },
+      { name: "마이페이지", value: 6542, colorKey: "pie_chart_pink" },
+    ] as SocialLoginStatItem[],
+  },
+  harmonyRoomUser: {
+    totalUsers: 20495,
+    items: [
+      { name: "제작 누적수", value: 11248, colorKey: "pie_chart_green" },
+      { name: "폐쇄 누적수", value: 9247, colorKey: "pie_chart_pink" },
+    ] as SocialLoginStatItem[],
+  },
+  positiveSignal: {
+    feed: [
+      { label: "좋아요", count: 420 },
+      { label: "북마크", count: 310 },
+      { label: "댓글", count: 280 },
+    ],
+    harmonyRoom: [
+      { label: "개수", count: 380 },
+      { label: "누적가입", count: 450 },
+      { label: "북마크", count: 290 },
+    ],
+    calendar: [{ label: "북마크", count: 360 }],
+    share: [
+      { label: "피드", count: 320 },
+      { label: "마이페이지", count: 240 },
+    ],
+  } as SignalStatGroup,
+  negativeSignal: {
+    feed: [
+      { label: "좋아요", count: 180 },
+      { label: "북마크", count: 140 },
+      { label: "댓글", count: 120 },
+    ],
+    harmonyRoom: [
+      { label: "개수", count: 210 },
+      { label: "누적가입", count: 260 },
+      { label: "북마크", count: 190 },
+    ],
+    calendar: [{ label: "북마크", count: 150 }],
+    share: [
+      { label: "피드", count: 170 },
+      { label: "마이페이지", count: 130 },
+    ],
+  } as SignalStatGroup,
 };

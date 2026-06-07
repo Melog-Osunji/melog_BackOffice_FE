@@ -78,7 +78,7 @@ export default function DashboardLayout() {
           <MenuItem to="/harmonyrooms">하모니룸 관리</MenuItem>
           <MenuItem to="/calender">캘린더</MenuItem>
           <MenuItem to="/QnA">1:1 문의</MenuItem>
-          <MenuItem to="/notice">알림</MenuItem>
+          <MenuItem to="/alarm">알림</MenuItem>
           <MenuItem to="/userstatistics">사용자 통계</MenuItem>
           <MenuItem to="/leavestatistics">탈퇴•폐쇄 통계</MenuItem>
           <MenuItem to="/server">서버 관리</MenuItem>
